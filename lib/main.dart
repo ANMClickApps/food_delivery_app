@@ -2,8 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/colors_style.dart';
+import 'package:food_delivery_app/screens/home/home_screen.dart';
 import 'package:food_delivery_app/screens/login/login_screen.dart';
 import 'package:food_delivery_app/screens/splash_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Food delivery app',
       theme: ThemeData(
+          textTheme: GoogleFonts.latoTextTheme(
+            Theme.of(context).textTheme,
+          ),
           primarySwatch: Colors.red,
           outlinedButtonTheme: OutlinedButtonThemeData(
               style: OutlinedButton.styleFrom(
@@ -31,8 +36,9 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
-      initialRoute: SplashScreen.id,
+      initialRoute: HomeScreen.id,
     );
   }
 }
