@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/models/product_model.dart';
+import 'package:food_delivery_app/screens/details/product_details_screen.dart';
 import 'package:food_delivery_app/screens/home/components/body_home/product_card.dart';
 
 class ProductCarousel extends StatefulWidget {
@@ -13,12 +14,15 @@ class ProductCarousel extends StatefulWidget {
 
 class _ProductCarouselState extends State<ProductCarousel> {
   PageController _pageController;
-  int initPage = 1;
+  int initPage = 0;
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _pageController = PageController(
+      initialPage: initPage,
+      viewportFraction: 0.63,
+    );
   }
 
   @override
@@ -32,10 +36,24 @@ class _ProductCarouselState extends State<ProductCarousel> {
     return AspectRatio(
       aspectRatio: 0.85,
       child: PageView.builder(
-          itemCount: categories[widget.currentIndex].productList.length,
-          itemBuilder: (context, index) => ProductCard(
-                product: categories[widget.currentIndex].productList[index],
-              )),
+        itemCount: categories[widget.currentIndex].productList.length,
+        itemBuilder: (context, index) => GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailsScreen(
+                      product:
+                          categories[widget.currentIndex].productList[index]),
+                  fullscreenDialog: true,
+                ));
+          },
+          child: ProductCard(
+            product: categories[widget.currentIndex].productList[index],
+          ),
+        ),
+        controller: _pageController,
+      ),
     );
   }
 }

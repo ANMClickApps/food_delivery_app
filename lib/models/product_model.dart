@@ -2,8 +2,9 @@ class ProductModel {
   final String title;
   final String imagePath;
   final String number;
+  final List<String> imageList;
 
-  ProductModel({this.title, this.imagePath, this.number});
+  ProductModel({this.title, this.imagePath, this.number, this.imageList});
 }
 
 class Category {
@@ -21,11 +22,19 @@ List<Category> categories = [
       ProductModel(
           title: 'Veggie tomato mix',
           imagePath: 'assets/images/foods1.png',
-          number: 'N1,900'),
+          number: 'N1,900',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
       ProductModel(
           title: 'Spicy fish sauce',
           imagePath: 'assets/images/foods2.png',
-          number: 'N2,300.99'),
+          number: 'N2,300.99',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
     ],
   ),
   Category(
@@ -34,11 +43,19 @@ List<Category> categories = [
       ProductModel(
           title: 'Wine',
           imagePath: 'assets/images/foods2.png',
-          number: 'N1,900'),
+          number: 'N1,900',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
       ProductModel(
           title: 'Coffee',
           imagePath: 'assets/images/foods1.png',
-          number: 'N2,300.99'),
+          number: 'N2,300.99',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
     ],
   ),
   Category(
@@ -47,11 +64,19 @@ List<Category> categories = [
       ProductModel(
           title: 'Cookies',
           imagePath: 'assets/images/foods1.png',
-          number: 'N1,900'),
+          number: 'N1,900',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
       ProductModel(
           title: 'Cakes',
           imagePath: 'assets/images/foods2.png',
-          number: 'N2,300.99'),
+          number: 'N2,300.99',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
     ],
   ),
   Category(
@@ -60,11 +85,19 @@ List<Category> categories = [
       ProductModel(
           title: 'Espagnole sauce',
           imagePath: 'assets/images/foods2.png',
-          number: 'N1,900'),
+          number: 'N1,900',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
       ProductModel(
           title: 'Tomato sauce',
           imagePath: 'assets/images/foods1.png',
-          number: 'N2,300.99'),
+          number: 'N2,300.99',
+          imageList: [
+            'assets/images/foods1.png',
+            'assets/images/foods2.png',
+          ]),
     ],
   ),
 ];

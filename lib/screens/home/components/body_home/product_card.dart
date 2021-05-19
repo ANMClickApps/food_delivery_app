@@ -47,7 +47,7 @@ class ProductCard extends StatelessWidget {
                           offset: Offset(0, 1),
                         )
                       ]),
-                  child: Expanded(child: Image.asset(product.imagePath)),
+                  child: Image.asset(product.imagePath),
                 ),
                 SizedBox(height: 31.0),
                 Padding(
